@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <style>
+      body {
+        background: radial-gradient(
+          circle at 10% 20%,
+          rgb(166, 226, 229) 0%,
+          rgb(198, 232, 221) 100.2%
+        );
+      }
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        display: block;
+        color: #1e6262;
+        font-size: 34px;
+        line-height: 48px;
+        margin: 0;
+        font-weight: bold;
+      }
+      h2 {
+        display: block;
+        margin: 0;
+        font-size: 34px;
+        line-height: 48px;
+        font-weight: 400;
+      }
+      ul {
+        padding: 0;
+      }
+      li {
+        display: list-item;
+        list-style: none;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+        margin: 0 auto;
+        max-width: 400px;
+      }
+      li:hover {
+        color: black;
+        background: rgba(30, 98, 98, 0.4);
+      }
+      button {
+        display: block;
+        margin: 20px auto;
+        border: 1px solid #1e6262;
+        background: #1e6262;
+        color: white;
+        font-size: 16px;
+        line-height: 22px;
+        padding: 16px 24px;
+        border-radius: 30px;
+        transition: all 200ms ease;
+        box-shadow: 2px 5px 5px 0 rgba(56, 53, 53, 0.2);
+        cursor: pointer;
+      }
+      button:hover {
+        color: #1e6262;
+        background: white;
+        opacity: 0.6;
+        box-shadow: 2px 2px rgba(30, 98, 97, 0.6);
+      }
+      p {
+        font-size: 18px;
+        opacity: 0.7;
+        text-align: center;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      🌤
+      <br />
+      Currently 30º in São Vicente
+    </h1>
+    <h2>28º / <strong>32º</strong></h2>
+
+    <ul>
+      <li>
+        <h3>☁️ Tomorrow</h3>
+        <p>24º/<strong>27º</strong></p>
+      </li>
+      <li>
+        <h3>⛅️Saturday</h3>
+        <p>25º/<strong>28º</strong></p>
+      </li>
+      <li>
+        <h3>☀️Sunday</h3>
+        <p>28º/ <strong>30º</strong></p>
+      </li>
+    </ul>
+    <button>Change City</button>
+    <p>Coded by Alexa Ailine</p>
+    ;
+    <script>
+      function changeCity() {
+        let city = prompt("What city are you in?");
+        let temperature = prompt("What temperature is it?");
+        let h1 = document.querySelector("h1");
+        if (temperature < 0) {
+          h1.innerHTML = "🥶<br/> Currently " + temperature + "°C in " + city;
+        } else {
+          h1.innerHTML = "😄 <br/> Currently " + temperature + "ºC in " + city;
+        }
+      }
+      let changeButton = document.querySelector("button");
+      changeButton.addEventListener("click", changeCity);
+    </script>
+  </body>
+</html>
